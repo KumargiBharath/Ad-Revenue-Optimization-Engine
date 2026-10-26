@@ -7,7 +7,7 @@
 [![RL](https://img.shields.io/badge/RL-Stable--Baselines3-red.svg)](https://stable-baselines3.readthedocs.io/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-A full-stack, intelligent real-time system designed to automate the pricing, allocation, and optimization of digital ad inventory. AROE combines advanced Machine Learning, Reinforcement Learning, and an interactive React dashboard to maximize total revenue yield (eCPM/RPM) for publishers while preserving a premium user experience
+A full-stack, intelligent real-time system designed to automate the pricing, allocation, and optimization of digital ad inventory. AROE combines advanced Machine Learning, Reinforcement Learning, and an interactive React dashboard to maximize total revenue yield (eCPM/RPM) for publishers while preserving a premium user experience.
 
 ---
 
