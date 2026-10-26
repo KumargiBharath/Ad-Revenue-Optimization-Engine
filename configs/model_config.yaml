@@ -1,0 +1,41 @@
+# ==============================
+# MODEL CONFIGURATION
+# ==============================
+model:
+  type: stacked_ensemble # OPTIONS: xgboost | lightgbm | sklearn_rf | ensemble_voting | stacked_ensemble
+
+training:
+  test_size: 0.2
+  random_state: 42
+
+# ==============================
+# HYPERPARAMETER GRIDS
+# Used for RandomizedSearch when running single models.
+# (Note: The Stacked Ensemble uses internal defaults defined in ctr_model.py,
+# but these grids are kept for reference or if switching back to single models).
+# ==============================
+hyperparameters:
+  xgboost:
+    n_estimators: [800, 1000, 1500]
+    max_depth: [6, 8, 10]
+    learning_rate: [0.01, 0.02, 0.05]
+    subsample: [0.8, 1.0]
+    colsample_bytree: [0.8, 1.0]
+    gamma: [0, 0.1]
+    reg_alpha: [0, 0.1]
+    reg_lambda: [1.0, 5.0]
+    min_child_weight: [1, 3, 5]
+
+  lightgbm:
+    n_estimators: [500, 800, 1000]
+    learning_rate: [0.01, 0.05]
+    max_depth: [6, 8, 10]
+    num_leaves: [31, 63, 127]
+    subsample: [0.8, 1.0]
+    colsample_bytree: [0.8, 1.0]
+
+  sklearn_rf:
+    n_estimators: [200, 400]
+    max_depth: [10, 15, 20]
+    min_samples_split: [2, 5]
+    min_samples_leaf: [1, 2]

@@ -1,0 +1,45 @@
+# ==============================
+# GLOBAL SETTINGS
+# ==============================
+random_seed: 42
+mode: development
+
+# ==============================
+# DATA GENERATION
+# ==============================
+data_generation:
+  num_impressions: 100000
+  num_advertisers: 50
+  min_bid: 0.5
+  max_bid: 5.0
+  min_budget: 1000
+  max_budget: 10000
+  competitors_per_auction: 3
+
+  position_bias:
+    top: 1.2
+    side: 1.0
+    bottom: 0.8
+
+  # Attributes for User Generation
+  user_attributes:
+    age_groups: ["18-24", "25-34", "35-44", "45-54", "55+"]
+    devices: ["mobile", "desktop", "tablet"]
+    locations: ["US", "EU", "APAC", "LATAM"]
+
+# ==============================
+# CLICK MODEL (Ground Truth)
+# ==============================
+click_model:
+  quality_weight: 0.8
+  match_weight: 1.2
+  historical_ctr_weight: 0.5
+  position_weight: 0.3
+  time_weight: 0.2
+  noise_std: 0.1
+
+#===============================
+optimization:
+  frequency_cap: 3
+  diversity_penalty: 0.05
+  pacing_target: 0.95
