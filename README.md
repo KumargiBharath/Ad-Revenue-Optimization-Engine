@@ -23,17 +23,17 @@ Digital publishers face the constant challenge of maximizing revenue from ad inv
 
 ### The Problem ("As-Is" State)
 
-- **Inventory Leakage**: Unsold ad slots due to poor demand source connections.
-- **Sub-optimal Floor Prices**: Static price floors lead to either unsold inventory or lost revenue.
-- **Latency**: Sequential "waterfall" ad loading degrades page load times and user experience.
-- **Fragmented Demand**: Inability to evaluate competing bids simultaneously.
+1. **Inventory Leakage**: Unsold ad slots due to poor demand source connections.
+2. **Sub-optimal Floor Prices**: Static price floors lead to either unsold inventory or lost revenue.
+3. **Latency**: Sequential "waterfall" ad loading degrades page load times and user experience.
+4. **Fragmented Demand**: Inability to evaluate competing bids simultaneously.
 
 ### The Solution ("To-Be" State)
 
-- **Maximize Yield**: Real-time routing to the highest-paying demand source.
-- **Optimize Fill Rate**: Intelligent dynamic floor pricing to reduce unsold inventory to near zero.
-- **Minimize Latency**: Server-side decisioning to replace sequential waterfall loading.
-- **UX Preservation**: Built-in frequency capping, diversity management, and ad quality filters.
+1. **Maximize Yield**: Real-time routing to the highest-paying demand source.
+2. **Optimize Fill Rate**: Intelligent dynamic floor pricing to reduce unsold inventory to near zero.
+3. **Minimize Latency**: Server-side decisioning to replace sequential waterfall loading.
+4. **UX Preservation**: Built-in frequency capping, diversity management, and ad quality filters.
 
 ---
 
@@ -41,18 +41,18 @@ Digital publishers face the constant challenge of maximizing revenue from ad inv
 
 ### 🧠 Backend (Machine Learning & Optimization)
 
-- **High-Performance Auction Simulator**: Vectorized Pandas/NumPy simulation of users, advertisers, and second-price auctions with non-linear ground-truth click models.
-- **Advanced CTR Prediction**: Stacked Ensemble models (XGBoost + LightGBM + Random Forest) with Isotonic Probability Calibration and business-threshold optimization for maximum profit.
-- **Reinforcement Learning Agents**: Gymnasium environment with Deep Q-Network (DQN) agents for strategic bid shading and ROI-optimized bidding.
-- **Dynamic Auction Optimization**: Features dynamic reserve pricing, budget pacing, frequency capping, and diversity penalties to prevent market monopolies.
-- **Data Drift & Schema Validation**: Robust `DatasetSchema` enforcement and `DriftMonitor` to detect feature distribution shifts in real-time.
+1. **High-Performance Auction Simulator**: Vectorized Pandas/NumPy simulation of users, advertisers, and second-price auctions with non-linear ground-truth click models.
+2. **Advanced CTR Prediction**: Stacked Ensemble models (XGBoost + LightGBM + Random Forest) with Isotonic Probability Calibration and business-threshold optimization for maximum profit.
+3. **Reinforcement Learning Agents**: Gymnasium environment with Deep Q-Network (DQN) agents for strategic bid shading and ROI-optimized bidding.
+4. **Dynamic Auction Optimization**: Features dynamic reserve pricing, budget pacing, frequency capping, and diversity penalties to prevent market monopolies.
+5. **Data Drift & Schema Validation**: Robust `DatasetSchema` enforcement and `DriftMonitor` to detect feature distribution shifts in real-time.
 
 ### 💻 Frontend (Interactive Dashboard)
 
-- **Secure Authentication**: JWT-based login/signup flow with protected routing.
-- **Real-Time Prediction Engine**: Interactive form to input ad parameters and get instant "BID" or "SKIP" decisions with predicted CTR.
-- **Dynamic Data Visualization**: Beautiful, responsive charts (Recharts) showing Bid Impact, Quality Impact, Hourly Trends, and Category Performance.
-- **Profit Sensitivity Analyzer**: Interactive slider to simulate Return on Investment (ROI) across Baseline, ML Volume, and ML Margin strategies.
+1. **Secure Authentication**: JWT-based login/signup flow with protected routing.
+2. **Real-Time Prediction Engine**: Interactive form to input ad parameters and get instant "BID" or "SKIP" decisions with predicted CTR.
+3. **Dynamic Data Visualization**: Beautiful, responsive charts (Recharts) showing Bid Impact, Quality Impact, Hourly Trends, and Category Performance.
+4. **Profit Sensitivity Analyzer**: Interactive slider to simulate Return on Investment (ROI) across Baseline, ML Volume, and ML Margin strategies.
 
 ---
 
