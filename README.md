@@ -98,71 +98,109 @@ AROE/
     └── package.json              # Node.js dependencies
 ```
 
+---
 
 # 🚀 Getting Started
 
 ## 1. Prerequisites
 
+```bash
 Python 3.12+
 
 Node.js 18+ & npm
-
+```
 ## 2. Backend Installation
 
 ## Navigate to backend directory (or project root if structured flat)
+
+```bash
 cd backend
+```
 
 ## Create and activate a virtual environment
+
+```bash
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
 
 ## Install dependencies
-pip install -r requirements.txt
 
+```bash
+pip install -r requirements.txt
+```
 
 ## 3. Frontend Installation
 
 ## Open a new terminal and navigate to the frontend directory
+
+```bash
 cd frontend
+```
 
 ## Install Node dependencies
+
+```bash
 npm install
+```
+
+---
 
 ## ⚡ Usage & Running the Application
 
 ## Step 1: Generate Synthetic Data & Train Models (Backend)
-Run the ML pipelines in the following order to generate data, train the stacked ensemble, and save the artifacts:
+### Run the ML pipelines in the following order to generate data, train the stacked ensemble, and save the artifacts:
 
 ## 1. Generate synthetic auction data
+
+```
 python -m ml.data_generation.simulator
+```
 
 ## 2. Train the CTR Model (includes hyperparameter tuning & calibration)
+
+```bash
 python -m ml.pipelines.training_pipeline
+```
 
 ## 3. (Optional) Train the RL Bidding Agent
+
+```bash
 python -m ml.pipelines.train_rl_agent
+```
 
 ## 4. Run Business Optimization Simulation to evaluate strategies
+
+```bash
 python -m ml.pipelines.business_optimization_pipeline
+```
 
 ## Step 2: Start the Backend API Server
 
 
 ## Ensure your virtual environment is activated
-uvicorn ml.api:app --reload --port 8000
 
-The API will be available at http://localhost:8000. Interactive docs at http://localhost:8000/docs.
+```bash
+uvicorn ml.api:app --reload --port 8000
+```
+
+### The API will be available at http://localhost:8000. Interactive docs at http://localhost:8000/docs.
 
 ## Step 3: Start the Frontend Dashboard
 
 ## In the frontend directory
-npm start
 
-The React application will open automatically at http://localhost:3000.Method,Endpoint,Description
+```bash
+npm start
+```
+
+### The React application will open automatically at http://localhost:3000.Method,Endpoint,Description
 POST,/auth/signup,Register a new user
 POST,/auth/login,Obtain JWT access token
 POST,/predict,Get real-time CTR prediction and BID/SKIP decision
-POST,/analyze,"Run multi-dimensional sensitivity analysis (bid, quality, time, device)"
+POST,/analyze,"Run multi-dimensional sensitivity analysis (bid, quality, time, device)
+
+---
 
 ## 🔌 API Endpoints
 
@@ -173,41 +211,52 @@ POST,/analyze,"Run multi-dimensional sensitivity analysis (bid, quality, time, d
 | **POST**	 |  /predict	    | Get real-time CTR prediction and BID/SKIP decision                        |
 | **POST**	 |  /analyze	    | Run multi-dimensional sensitivity analysis (bid, quality, time, device)   |
 
+---
+
 ## 📊 Frontend Dashboard Features
 
-Profit Sensitivity Analyzer: Adjust the "Value Per Click" slider to instantly visualize how different ML strategies (Baseline vs. ML Volume vs. ML Margin) impact overall profit.
-Model Input Simulator: Tweak parameters like Device, Category, Bid, Quality Score, and Hour of Day to see how they affect the model's output.
-Dynamic Charts:
-📈 Bid Impact: Line chart showing CTR response to bid changes.
-⭐ Quality Impact: Line chart showing CTR response to quality score changes.
-⏰ Hourly Trend: Line chart tracking predicted CTR across 24 hours.
-🎯 Category Performance: Horizontal bar chart comparing CTR across different ad categories.
+###  Profit Sensitivity Analyzer: Adjust the "Value Per Click" slider to instantly visualize how different ML strategies (Baseline vs. ML Volume vs. ML Margin) impact overall profit.
+### Model Input Simulator: Tweak parameters like Device, Category, Bid, Quality Score, and Hour of Day to see how they affect the model's output.
+### Dynamic Charts:
+1. **📈 Bid Impact** : Line chart showing CTR response to bid changes.
+2. **⭐ Quality Impact** : Line chart showing CTR response to quality score changes.
+3. **⏰ Hourly Trend** : Line chart tracking predicted CTR across 24 hours.
+4. **🎯 Category Performance** : Horizontal bar chart comparing CTR across different ad categories.
+
+---
 
 ## 📈 Success Metrics (KPIs)
 
-The engine is designed to optimize and report on the following key performance indicators:
-eCPM / RPM: Target a 15-20% increase in revenue per 1,000 impressions.
-Fill Rate: Maintain >95% of ad requests successfully filled.
-Viewability Rate: Ensure >70% of served ads are actually viewable.
-Decision Latency: Achieve model inference and routing in <80ms.
+### The engine is designed to optimize and report on the following key performance indicators:
+1. **eCPM / RPM** : Target a 15-20% increase in revenue per 1,000 impressions.
+2. **Fill Rate** : Maintain >95% of ad requests successfully filled.
+3. **Viewability Rate** : Ensure >70% of served ads are actually viewable.
+4. **Decision Latency** : Achieve model inference and routing in <80ms.
+
+---
 
 ## ⚠️ Key Challenges Addressed
 
-Real-Time Latency: Optimized with vectorized NumPy operations and pre-computed feature lookups.
-Cold Start Problem: Mitigated via synthetic data generation and fallback global mean encodings.
-Sparse Data: Handled through advanced stacking ensembles and monotonic constraints to prevent overfitting.
-Privacy Compliance: Designed to operate on contextual and aggregated features, aligning with cookie-less tracking trends.
+1. **Real-Time Latency** : Optimized with vectorized NumPy operations and pre-computed feature lookups.
+2. **Cold Start Problem** : Mitigated via synthetic data generation and fallback global mean encodings.
+3. **Sparse Data** : Handled through advanced stacking ensembles and monotonic constraints to prevent overfitting.
+4. **Privacy Compliance** : Designed to operate on contextual and aggregated features, aligning with cookie-less tracking trends.
+
+---
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
-Fork the Project
-Create your Feature Branch (git checkout -b feature/AmazingFeature)
-Commit your Changes (git commit -m 'Add some AmazingFeature')
-Push to the Branch (git push origin feature/AmazingFeature)
-Open a Pull Request
+### Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
+### Fork the Project
+### Create your Feature Branch (git checkout -b feature/AmazingFeature)
+### Commit your Changes (git commit -m 'Add some AmazingFeature')
+### Push to the Branch (git push origin feature/AmazingFeature)
+### Open a Pull Request
+
+---
 
 ## 📄 License
-Distributed under the MIT License. See LICENSE for more information.
-Built with ❤️ for the future of programmatic advertising.
+### Distributed under the MIT License. See LICENSE for more information.
+
+## Built with ❤️ for the future of programmatic advertising.
 
